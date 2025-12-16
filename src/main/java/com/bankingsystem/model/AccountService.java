@@ -46,7 +46,6 @@ public class AccountService {
         BigDecimal currBalance = fromAcc.getBalance();
 
 
-        fromAcc.setBalance(fromAcc.getBalance().subtract(ammount));
         //call withdraw function to take out money from account
         withdraw(fromAcc, ammount);
         //call deposit function to deposit money to account
