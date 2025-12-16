@@ -16,5 +16,11 @@ public class ChequingAccount extends Account {
         return AccountType.CHECKING;
     }
 
-    // getters & setters
+    public BigDecimal getOverdraftLimit() {
+        return overdraftLimit;
+    }
+
+    public void setOverdraftLimit(BigDecimal overdraftLimit) {
+        this.overdraftLimit = overdraftLimit;
+    }
 }
