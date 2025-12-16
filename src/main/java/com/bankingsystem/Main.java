@@ -1,5 +1,6 @@
 package com.bankingsystem;
 
+import com.bankingsystem.model.AccountService;
 import com.bankingsystem.model.SavingsAccount;
 
 import java.math.BigDecimal;
@@ -14,6 +15,14 @@ public class Main {
         SavingsAccount savAcct = new SavingsAccount(500L, new BigDecimal("500"), new BigDecimal("0.05"));
 
         System.out.println(savAcct.getAccountType());
+
+        AccountService accServe= new AccountService();
+        accServe.withdraw(savAcct, new BigDecimal("700"));
+        System.out.println(savAcct.getBalance());
+        accServe.withdraw(savAcct, new BigDecimal("500"));
+        System.out.println(savAcct.getBalance());
+        accServe.deposit(savAcct, new BigDecimal("500"));
+        System.out.println(savAcct.getBalance());
 
     }
 }
