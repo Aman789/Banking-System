@@ -14,7 +14,6 @@ public class Main {
         SavingsAccount savAcct = new SavingsAccount(500L, new BigDecimal("500"), new BigDecimal("0.05"));
 
         System.out.println(savAcct.getAccountType());
-        System.out.println(savAcct.getInterestRate());
 
     }
 }
