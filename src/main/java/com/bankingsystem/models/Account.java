@@ -16,26 +16,18 @@ public class Account {
         this.accountType = accountType;
     }
 
-
     public Long getAccountId() {
         return accountId;
     }
-
-
 
     public Long getUserId() {
         return userId;
     }
 
-
-
     public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
 
     public AccountType getAccountType() {
         return accountType;
@@ -54,7 +46,7 @@ public class Account {
 
         this.balance = this.balance.add(amount);
 
-        System.out.println("Successfully deposited " + amount + " to account " + this.accountId);
+
         return true;
     }
     public boolean withdraw(BigDecimal amount) {
@@ -70,7 +62,7 @@ public class Account {
         }
 
         this.balance = this.balance.subtract(amount);
-        System.out.println("Withdrawal successful. New balance: " + this.balance);
+
         return true;
     }
 }
