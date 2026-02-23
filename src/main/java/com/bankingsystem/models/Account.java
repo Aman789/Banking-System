@@ -1,6 +1,8 @@
 package com.bankingsystem.models;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Account {
 
@@ -8,6 +10,8 @@ public class Account {
     private Long userId;
     private BigDecimal balance;
     private AccountType accountType;
+    List<Transaction> transactions = new ArrayList<>();
+    private Long transactionId = 1L;
 
     public Account(Long accountId, Long userId, BigDecimal balance, AccountType accountType) {
         this.accountId = accountId;
@@ -45,7 +49,8 @@ public class Account {
         }
 
         this.balance = this.balance.add(amount);
-
+        transactions.add(new Transaction(this.transactionId, this.accountId, amount, TransactionType.DEPOSIT, "Deposit"));
+        this.transactionId++;
 
         return true;
     }
@@ -62,6 +67,8 @@ public class Account {
         }
 
         this.balance = this.balance.subtract(amount);
+        transactions.add(new Transaction(this.transactionId, this.accountId, amount, TransactionType.WITHDRAWAL, "W/D"));
+        this.transactionId++;
 
         return true;
     }
